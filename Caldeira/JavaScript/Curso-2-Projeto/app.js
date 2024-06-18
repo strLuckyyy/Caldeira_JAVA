@@ -2,6 +2,8 @@
 function editarTxt(tag, txt){
     let conteudo = document.querySelector(tag);
     conteudo.innerHTML = txt;
+
+    //posso adicionar um speak futuramente.
 }
 
 // Função referente a geração de um novo número aleatório.
