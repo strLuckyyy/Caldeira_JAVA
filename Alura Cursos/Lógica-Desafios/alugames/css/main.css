@@ -127,6 +127,17 @@
 }
 
 .dashboard__item__button--return {
+    display: flex;
+    justify-content: center;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    padding: 1rem 1.5rem;
+    min-width: 13rem;
+
+    border-radius: 1rem;
+
     background-color: #01080E;
 }
 
