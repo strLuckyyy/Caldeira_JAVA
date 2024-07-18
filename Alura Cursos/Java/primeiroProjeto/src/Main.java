@@ -56,7 +56,7 @@ public class Main {
             String loginName = "Lucky";
             int pinNumber = 1234;
 
-            System.out.println(loginName);
+            System.out.println("Name: " + loginName);
             password = Integer.parseInt(listening("PIN number: "));
 
             if (password == pinNumber) {
