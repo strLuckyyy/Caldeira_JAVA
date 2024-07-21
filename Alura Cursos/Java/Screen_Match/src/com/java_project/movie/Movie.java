@@ -19,6 +19,9 @@ public class Movie {
         this.actors = actors;
         this.releaseDate = releaseDate;
         this.durationInMinutes = durationInMinutes;
+        this.totalReviews = 0;
+        this.reviews = 0.0;
+        this.aggregateRatings = 0.0;
     }
 
     public String getName() {
@@ -61,15 +64,7 @@ public class Movie {
     public void setDurationInMinutes(int durationInMinutes) {
         this.durationInMinutes = durationInMinutes;
     }
-
-    public void setTotalReviews(int totalReviews) {
-        this.totalReviews = totalReviews;
-    }
-
-    public void setReviews(double reviews) {
-        this.reviews = reviews;
-    }
-
+    
 
     // getting the movie's review
     public void review(double rating) {

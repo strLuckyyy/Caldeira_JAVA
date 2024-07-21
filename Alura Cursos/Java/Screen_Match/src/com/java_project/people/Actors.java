@@ -3,16 +3,16 @@ package com.java_project.people;
 public class Actors {
     private String name;
     private String sex;
-    private int yearBirth;
-    private int monthBirth;
-    private int dayBirth;
+    private int birthYear;
+    private int birthMonth;
+    private int birthDay;
     
     public Actors(String name, String sex, int yearBirth, int monthBirth, int dayBirth) {
         this.name = name;
         this.sex = sex;
-        this.yearBirth = yearBirth;
-        this.monthBirth = monthBirth;
-        this.dayBirth = dayBirth;
+        this.birthYear = yearBirth;
+        this.birthMonth = monthBirth;
+        this.birthDay = dayBirth;
     }
 
     public String getName() {
@@ -23,16 +23,16 @@ public class Actors {
         return sex;
     }
 
-    public int getYearBirth() {
-        return this.yearBirth;
+    public int getBirthYear() {
+        return this.birthYear;
     }
 
-    public int getMonthBirth() {
-        return monthBirth;
+    public int getBirthMonth() {
+        return birthMonth;
     }
 
-    public int getDayBirth() {
-        return dayBirth;
+    public int getBirthDay() {
+        return birthDay;
     }
 
     public void setName(String name) {
@@ -43,28 +43,28 @@ public class Actors {
         this.sex = sex;
     }
 
-    public void setYearBirth(int yearBirth) {
-        this.yearBirth = yearBirth;
+    public void setBirthYear(int yearBirth) {
+        this.birthYear = yearBirth;
     }
     
-    public void setMonthBirth(int monthBirth) {
-        this.monthBirth = monthBirth;
+    public void setBirthMonth(int monthBirth) {
+        this.birthMonth = monthBirth;
     }
 
-    public void setDayBirth(int dayBirth) {
-        this.dayBirth = dayBirth;
+    public void setBirthDay(int dayBirth) {
+        this.birthDay = dayBirth;
     }
 
 
     // this method return the actor's age
     public int age(int currentYear, int currentMonth, int currentDay) {
         // Checking if the actor's date of birth has passed, to return a more accurate age
-        if (currentMonth < this.monthBirth) {
-            return currentYear - this.yearBirth - 1;
+        if (currentMonth < this.birthMonth) {
+            return currentYear - this.birthYear - 1;
         }
-        if (currentDay < this.dayBirth) {
-            return currentYear - this.yearBirth - 1;
+        if (currentDay < this.birthDay) {
+            return currentYear - this.birthYear - 1;
         }
-        return currentYear - this.yearBirth;
+        return currentYear - this.birthYear;
     }
 }
