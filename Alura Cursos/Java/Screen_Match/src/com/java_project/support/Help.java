@@ -1,3 +1,5 @@
+package com.java_project.support;
+
 import java.util.Scanner;
 
 public class Help {

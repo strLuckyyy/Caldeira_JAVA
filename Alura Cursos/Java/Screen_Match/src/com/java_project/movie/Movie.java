@@ -1,22 +1,24 @@
+package com.java_project.movie;
+
 import java.util.Date;
 import java.util.Calendar;
+import com.java_project.people.*;
+import com.java_project.support.*;
 
 public class Movie {
     private String name;
     private Actors[][] actors;
     private int releaseDate;
     private int durationInMinutes;
-    private int totalReviews;
-    private double reviews;
-    private double aggregateRatings;
+    private int totalReviews; // number of people who rated the movie
+    private double reviews; // movie's rate
+    private double aggregateRatings; // sum of all reviews, without calculating average
 
-    public Movie(String name, Actors[][] actors, int releaseDate, int durationInMinutes, int totalReviews, double reviews) {
+    public Movie(String name, Actors[][] actors, int releaseDate, int durationInMinutes) {
         this.name = name;
         this.actors = actors;
         this.releaseDate = releaseDate;
         this.durationInMinutes = durationInMinutes;
-        this.totalReviews = totalReviews;
-        this.reviews = reviews;
     }
 
     public String getName() {
@@ -101,7 +103,7 @@ public class Movie {
             System.out.println("Name: " + this.actors[i][0].getName());
             System.out.println("Age : " + this.actors[i][0].age(year, month, day));
             System.out.println("Movie's role: " + this.actors[i][1]);
-            System.out.println(new Help().split(30));
+            System.out.println(split.split(30));
         }
     }
 
@@ -113,6 +115,11 @@ public class Movie {
         System.out.println("Name" + this.name);
         System.out.println("Realese date: " + this.releaseDate);
         System.out.println("Duration: " + this.durationInMinutes + "min");
-        System.out.println("Rating: " + );
+        System.out.println("Rating: " + this.reviews);
+
+        System.out.println(line);
+
+        System.out.println("Actors:");
+        showActors();
     }
 }

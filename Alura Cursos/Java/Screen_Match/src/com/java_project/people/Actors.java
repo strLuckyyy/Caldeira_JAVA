@@ -1,11 +1,15 @@
+package com.java_project.people;
+
 public class Actors {
     private String name;
+    private String sex;
     private int yearBirth;
     private int monthBirth;
     private int dayBirth;
     
-    public Actors(String name, int yearBirth, int monthBirth, int dayBirth) {
+    public Actors(String name, String sex, int yearBirth, int monthBirth, int dayBirth) {
         this.name = name;
+        this.sex = sex;
         this.yearBirth = yearBirth;
         this.monthBirth = monthBirth;
         this.dayBirth = dayBirth;
@@ -13,6 +17,10 @@ public class Actors {
 
     public String getName() {
         return this.name;
+    }
+
+    public String getSex() {
+        return sex;
     }
 
     public int getYearBirth() {
@@ -29,6 +37,10 @@ public class Actors {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public void setYearBirth(int yearBirth) {
@@ -53,7 +65,6 @@ public class Actors {
         if (currentDay < this.dayBirth) {
             return currentYear - this.yearBirth - 1;
         }
-
         return currentYear - this.yearBirth;
     }
 }
