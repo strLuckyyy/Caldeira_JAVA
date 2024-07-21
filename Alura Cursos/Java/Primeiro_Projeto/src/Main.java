@@ -45,7 +45,7 @@ public class Main {
         waiting.nextLine();
     }
 
-    public final static void clearConsole () {
+    public static void clearConsole () {
         System.out.print("\033\143");
     }
    
