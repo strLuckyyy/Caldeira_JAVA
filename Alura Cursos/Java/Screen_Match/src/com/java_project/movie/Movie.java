@@ -5,76 +5,14 @@ import java.util.Calendar;
 import com.java_project.people.*;
 import com.java_project.support.*;
 
-public class Movie {
-    private String name;
-    private Actors[][] actors;
-    private int releaseDate;
-    private int durationInMinutes;
-    private int totalReviews; // number of people who rated the movie
-    private double reviews; // movie's rate
-    private double aggregateRatings; // sum of all reviews, without calculating average
-
-    public Movie(String name, Actors[][] actors, int releaseDate, int durationInMinutes) {
-        this.name = name;
-        this.actors = actors;
-        this.releaseDate = releaseDate;
-        this.durationInMinutes = durationInMinutes;
-        this.totalReviews = 0;
-        this.reviews = 0.0;
-        this.aggregateRatings = 0.0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public Actors[][] getActors() {
-        return actors;
-    }
-
-    public int getReleaseDate() {
-        return releaseDate;
-    }
-
-    public int getDurationInMinutes() {
-        return durationInMinutes;
-    }
-
-    public int getTotalReviews() {
-        return totalReviews;
-    }
-
-    public double getReviews() {
-        return reviews;
-    }
-
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setActors(Actors[][] actors) {
-        this.actors = actors;
-    }
-
-    public void setReleaseDate(int releaseDate) {
-        this.releaseDate = releaseDate;
-    }
-
-    public void setDurationInMinutes(int durationInMinutes) {
-        this.durationInMinutes = durationInMinutes;
-    }
+public class Movie extends Media{
+    private People[][] actors;
+    private People[] director;
     
-
-    // getting the movie's review
-    public void review(double rating) {
-        aggregateRatings += rating;
-        totalReviews ++;
-    }
-
-    // average of the movie's reviews
-    public double average() {
-        return this.aggregateRatings / this.totalReviews;
+    public Movie(String name, int releaseDate, int durationInMinutes, People[][] actors, People[] director) {
+        super(name, releaseDate, durationInMinutes);
+        this.actors = actors;
+        this.director = director;
     }
 
     // it'll print on the console all of the actors who work in the movie
@@ -102,18 +40,10 @@ public class Movie {
         }
     }
 
+    @Override
     public void showStatus() {
-        Help help = new Help();
-        StringBuilder line = help.split(30);
-
-        System.out.println(line);
-        System.out.println("Name" + this.name);
-        System.out.println("Realese date: " + this.releaseDate);
-        System.out.println("Duration: " + this.durationInMinutes + "min");
-        System.out.println("Rating: " + this.reviews);
-
-        System.out.println(line);
-
+        super.showStatus();
+        
         System.out.println("Actors:");
         showActors();
     }

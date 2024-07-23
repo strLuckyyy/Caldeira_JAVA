@@ -1,15 +1,17 @@
 package com.java_project.people;
 
-public class Actors {
+public class People {
     private String name;
     private String sex;
+    private String job;
     private int birthYear;
     private int birthMonth;
     private int birthDay;
-    
-    public Actors(String name, String sex, int yearBirth, int monthBirth, int dayBirth) {
+
+    public People(String name, String sex, String job, int yearBirth, int monthBirth, int dayBirth) {
         this.name = name;
         this.sex = sex;
+        this.job = job;
         this.birthYear = yearBirth;
         this.birthMonth = monthBirth;
         this.birthDay = dayBirth;
@@ -21,6 +23,10 @@ public class Actors {
 
     public String getSex() {
         return sex;
+    }
+
+    public String getJob() {
+        return job;
     }
 
     public int getBirthYear() {
@@ -43,6 +49,10 @@ public class Actors {
         this.sex = sex;
     }
 
+    public void setJob(String job) {
+        this.job = job;
+    }
+
     public void setBirthYear(int yearBirth) {
         this.birthYear = yearBirth;
     }
@@ -54,7 +64,6 @@ public class Actors {
     public void setBirthDay(int dayBirth) {
         this.birthDay = dayBirth;
     }
-
 
     // this method return the actor's age
     public int age(int currentYear, int currentMonth, int currentDay) {

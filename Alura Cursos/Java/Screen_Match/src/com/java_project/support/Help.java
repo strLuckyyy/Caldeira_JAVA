@@ -11,12 +11,18 @@ public class Help {
         return line;
     }
 
-    public static String listening (String text) {
-        @SuppressWarnings("resource")
-        Scanner listen = new Scanner(System.in);
+    public static String listeningStr (String text) {
+        try (Scanner listen = new Scanner(System.in)) {
+            System.out.println(text);
+            return listen.nextLine();
+        }
+    }
 
-        System.out.println(text);
-        return listen.nextLine();
+    public static int listeningInt (String text) {
+        try (Scanner listen = new Scanner(System.in)) {
+            System.out.println(text);
+            return listen.nextInt();
+        }
     }
 
     public static void waitInput () {
