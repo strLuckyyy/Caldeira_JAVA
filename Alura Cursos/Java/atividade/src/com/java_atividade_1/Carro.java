@@ -1,3 +1,4 @@
+package com.java_atividade_1;
 /*
  * Crie uma classe Carro com atributos modelo, ano, cor e métodos para exibir a ficha técnica e calcular a idade do carro.
  */

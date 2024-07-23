@@ -1,3 +1,5 @@
+package com.java_atividade_1;
+
 import java.util.*;
 
 public class Main {
