@@ -27,16 +27,32 @@ public class Aluno {
         this.nome = nome;
     }
 
+    private void notaAtual() {
+        System.out.println("Nota atual: " + this.calcularMedia());
+    }
+
     public void adicionarNota(double nota) {
         this.notas += nota;
         this.qtdNotas++;
+        this.notaAtual();
     }
 
     public void retirarNota(double nota) {
-        this.notas -= nota;
+        if(this.notas > nota) {
+            this.notas -= nota;
+            this.qtdNotas--;
+            this.notaAtual();
+            return;
+        }
+        this.notas = 0;
+        this.qtdNotas = 0;
+        this.notaAtual();    
     }
 
     public double calcularMedia() {
-        return this.notas / this.qtdNotas;
+        if(this.qtdNotas > 1) {
+            return this.notas / this.qtdNotas;
+        }
+        return this.notas;
     }
 }

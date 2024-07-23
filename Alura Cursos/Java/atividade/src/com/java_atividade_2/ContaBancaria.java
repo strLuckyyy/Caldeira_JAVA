@@ -15,10 +15,6 @@ public class ContaBancaria {
         this.titular = titular;
     }
 
-    public String getTitular() {
-        return titular;
-    }
-
     public int getNumeroConta() {
         return numeroConta;
     }
@@ -27,17 +23,15 @@ public class ContaBancaria {
         return saldo;
     }
 
-    public void setTitular(String titular) {
-        this.titular = titular;
-    }
-
     public void deposito(double valor) {
         this.saldo += valor;
+        System.out.println("Saldo de " + this.saldo + "Reais");
     }
 
     public void saque(double valor) {
         if (this.saldo > valor) {
             this.saldo -= valor;
+            System.out.println("Saldo de " + this.saldo + "Reais");
             return;
         }
         System.out.println("Não há saldo o suficiente");

@@ -31,9 +31,9 @@ public class IdadePessoa {
 
     public void verificarIdade() {
         if(this.idade < 18) {
-            System.out.println("menor de idade");
+            System.out.println(this.nome + " é menor de idade");
             return;
         }
-        System.out.println("maior de idade");
+        System.out.println(this.nome + " é maior de idade");
     }
 }
