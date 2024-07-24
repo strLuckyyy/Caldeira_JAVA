@@ -6,6 +6,7 @@ import com.java_project.people.*;
 import com.java_project.support.*;
 
 public class Movie extends Media{
+    // TODO: turn this better
     private People[][] actors;
     private People[] director;
     
@@ -13,6 +14,21 @@ public class Movie extends Media{
         super(name, releaseDate, durationInMinutes);
         this.actors = actors;
         this.director = director;
+    }
+
+    public People[][] getActors() {
+        return actors;
+    }
+
+    public People[] getDirector() {
+        return director;
+    }
+
+    // TODO: addActor, addDirector, removeActor, removeDirector
+    public void addActor(People newActor) {
+        for(i = 0; i < this.actors.length; i++){
+            
+        }
     }
 
     // it'll print on the console all of the actors who work in the movie
