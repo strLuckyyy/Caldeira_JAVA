@@ -6,17 +6,16 @@ import com.java_project.people.*;
 import com.java_project.support.*;
 
 public class Movie extends Media{
-    // TODO: turn this better
-    private People[][] actors;
+    private People[] actors;
     private People[] director;
     
-    public Movie(String name, int releaseDate, int durationInMinutes, People[][] actors, People[] director) {
+    public Movie(String name, int releaseDate, int durationInMinutes, People[] actors, People[] director) {
         super(name, releaseDate, durationInMinutes);
         this.actors = actors;
         this.director = director;
     }
 
-    public People[][] getActors() {
+    public People[] getActors() {
         return actors;
     }
 
@@ -24,15 +23,47 @@ public class Movie extends Media{
         return director;
     }
 
-    // TODO: addActor, addDirector, removeActor, removeDirector
-    public void addActor(People newActor) {
-        for(i = 0; i < this.actors.length; i++){
-            
+    // add a new actor or director in the list
+    public void addPeople(People newPeople, People[] peopleList) {
+        People[] newList = new People[peopleList.length + 1];
+        
+        for (int i = 0; i < newList.length; i++) {
+            if(i == newList.length - 1) break;
+            newList[i] = peopleList[i];
         }
+        newList[newList.length - 1] = newPeople;
+
+        if(peopleList == this.actors){
+            this.actors = newList;
+            return;
+        }
+        this.director = newList;
     }
 
-    // it'll print on the console all of the actors who work in the movie
-    public void showActors() {
+    // remove from the list of actors or directors
+    public void removePeople(People[] peopleList) {
+        for (int i = 0; i < peopleList.length; i++) {
+            System.out.println(i + " " + peopleList[i].getName());
+        }
+        
+        int index = Help.listeningInt("Qual index? ");
+        People[] newList = new People[peopleList.length - 1];
+
+        for (int i = 0; i < peopleList.length; i++) {
+            if(i != index){
+               newList[i] = peopleList[i]; 
+            }
+        }
+
+        if(peopleList == this.actors){
+            this.actors = newList;
+            return;
+        }
+        this.director = newList;
+    }
+
+    // it'll print on the console all of the people who work in the movie
+    public void showPeople(People[] peopleList) {
         // initializing objects
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
@@ -48,10 +79,10 @@ public class Movie extends Media{
 
         // printing all of actors
         System.out.println(split.split(30));
-        for (int i = 0; i < this.actors.length; i++) {
-            System.out.println("Name: " + this.actors[i][0].getName());
-            System.out.println("Age : " + this.actors[i][0].age(year, month, day));
-            System.out.println("Movie's role: " + this.actors[i][1]);
+        for (int i = 0; i < peopleList.length; i++) {
+            System.out.println("Name: " + peopleList[i].getName());
+            System.out.println("Age : " + peopleList[i].age(year, month, day));
+            System.out.println("Movie's role: " + peopleList[i].getJob());
             System.out.println(split.split(30));
         }
     }
@@ -61,6 +92,9 @@ public class Movie extends Media{
         super.showStatus();
         
         System.out.println("Actors:");
-        showActors();
+        showPeople(this.actors);
+
+        System.out.println("Directors:");
+        showPeople(this.director);
     }
 }

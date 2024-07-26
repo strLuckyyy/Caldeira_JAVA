@@ -52,6 +52,34 @@ public class Media {
         this.durationInMinutes = durationInMinutes;
     }
     
+    // add a new media in the list
+    protected Media[] addSomething(Media newMedia, Media[] media) {
+        Media[] newLMedias = new Media[media.length + 1];
+
+        for (int i = 0; i < newLMedias.length; i++) {
+            if(i == newLMedias.length - 1) break;
+            newLMedias[i] = media[i];
+        }
+
+        newLMedias[newLMedias.length - 1] = newMedia;
+        return newLMedias;
+    }
+
+    // remove a media from the list
+    protected Media[] removeSomething(Media[] media, String typeMedia, String textInputIndex) {
+        for (int i = 0; i < media.length; i++) {
+            System.out.println(i + typeMedia);
+        }
+        int index = Help.listeningInt(textInputIndex);
+
+        Media[] newLMedias = new Media[media.length - 1];
+
+        for (int i = 0; i < media.length; i++) {
+            if (i != index) newLMedias[i] = media[i];
+        }
+
+        return newLMedias;
+    }
 
     // getting the movie's review
     public void review(double rating) {
@@ -75,5 +103,9 @@ public class Media {
         System.out.println("Rating: " + this.reviews);
 
         System.out.println(line);
+    }
+
+    public void watch() {
+        System.out.println("Watching " + this.name);
     }
 }

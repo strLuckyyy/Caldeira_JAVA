@@ -2,6 +2,9 @@ package com.java_project.support;
 
 import java.util.Scanner;
 
+import com.java_project.movie.Media;
+import com.java_project.movie.Season;
+
 public class Help {
     public StringBuilder split(int quantity) {
         StringBuilder line = new StringBuilder();
@@ -34,4 +37,5 @@ public class Help {
     public static void clearConsole () {
         System.out.print("\033\143");
     }
+
 }

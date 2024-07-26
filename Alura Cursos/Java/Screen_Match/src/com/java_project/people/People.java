@@ -2,16 +2,16 @@ package com.java_project.people;
 
 public class People {
     private String name;
-    private String sex;
     private String job;
+    private String sex;
     private int birthYear;
     private int birthMonth;
     private int birthDay;
 
-    public People(String name, String sex, String job, int yearBirth, int monthBirth, int dayBirth) {
+    public People(String name, String job, String string, int yearBirth, int monthBirth, int dayBirth) {
         this.name = name;
-        this.sex = sex;
         this.job = job;
+        this.sex = string;
         this.birthYear = yearBirth;
         this.birthMonth = monthBirth;
         this.birthDay = dayBirth;
@@ -21,12 +21,12 @@ public class People {
         return this.name;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
     public String getJob() {
         return job;
+    }
+    
+    public String getSex() {
+        return sex;
     }
 
     public int getBirthYear() {
