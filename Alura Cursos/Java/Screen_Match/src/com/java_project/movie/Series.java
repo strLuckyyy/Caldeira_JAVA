@@ -1,8 +1,5 @@
 package com.java_project.movie;
 
-import com.java_project.people.People;
-import com.java_project.support.Help;
-
 public class Series extends Media{
     private int numSeasons;
     private Season[] seasonEpisodeData; //each index represents a 'Season' object containing all episodes of that season. Seasons are identified by their index.

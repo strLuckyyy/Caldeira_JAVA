@@ -31,9 +31,8 @@ public class Season extends Media{
 
     // add a new episode in the list
     public void addEpisode(Episodes newEpisode) {
-        Episodes[] newList = this.episodes.clone();
-        newList[this.episodes.length + 1] = newEpisode;
-
+        Episodes[] newList = new Episodes[this.totalEpisodes + 1];
+        newList[this.totalEpisodes + 1] = newEpisode;
         this.episodes = newList;
     }
 
